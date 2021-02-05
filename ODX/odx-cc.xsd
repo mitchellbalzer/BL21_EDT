@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="odx-xhtml.xsd"/>
+	<xsd:complexType name="CATALOG">
+		<xsd:sequence>
+			<xsd:element name="SHORT-NAME" type="xsd:string"/>
+			<xsd:element name="COMPANY-DATAS" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="COMPANY-DATA" type="COMPANY-DATA" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ADMIN-DATA" type="ADMIN-DATA" minOccurs="0"/>
+			<xsd:element name="ABLOCKS" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ABLOCK" type="ABLOCK" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ABLOCK">
+		<xsd:sequence>
+			<xsd:group ref="ELEMENT-ID"/>
+			<xsd:element name="CATEGORY" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ADMIN-DATA" type="ADMIN-DATA" minOccurs="0"/>
+			<xsd:element name="FILES" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="FILE" type="FILE" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="UPD" type="UPD-STATUS" default="UNDEFINED"/>
+	</xsd:complexType>
+	<xsd:complexType name="FILE">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="CREATION-DATE" type="xsd:date" use="optional"/>
+				<xsd:attribute name="CREATOR" type="xsd:string" use="optional"/>
+				<xsd:attribute name="MIME-TYPE" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="UPD-STATUS">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="NEW"/>
+			<xsd:enumeration value="CHANGED"/>
+			<xsd:enumeration value="UNCHANGED"/>
+			<xsd:enumeration value="UNUSED"/>
+			<xsd:enumeration value="REUSED"/>
+			<xsd:enumeration value="DELETED"/>
+			<xsd:enumeration value="UNDEFINED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+	<!-- ++++++++++ Definition of ADMIN-DATA: ++++++++++ -->
+	<xsd:complexType name="ADMIN-DATA">
+		<!--Class: ADMIN-DATA-->
+		<!-- The ADMIN-DATA class contains information about administration of the specific data. -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="LANGUAGE"/>
+			<xsd:element type="COMPANY-DOC-INFOS" name="COMPANY-DOC-INFOS" minOccurs="0" maxOccurs="1"/>
+			<xsd:element type="DOC-REVISIONS" name="DOC-REVISIONS" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="COMPANY-DOC-INFO">
+		<!--Class: COMPANY-DOC-INFO-->
+		<!-- The COMPANY-DOC-INFO objects contain company-specific information about the object the ADMIN-DATA belongs to. They are mainly used for documentation purposes. -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="COMPANY-DATA-REF" type="ODXLINK"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="TEAM-MEMBER-REF" type="ODXLINK"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="DOC-LABEL"/>
+			<xsd:element type="SDGS" name="SDGS" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="COMPANY-DOC-INFOS">
+		<!-- Automatically generated wrapper element type -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" type="COMPANY-DOC-INFO" name="COMPANY-DOC-INFO"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="COMPANY-REVISION-INFO">
+		<!--Class: COMPANY-REVISION-INFO-->
+		<!-- Company-specific revision information can be stored in COMPANY-REVISION-INFO objects. -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="COMPANY-DATA-REF" type="ODXLINK"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="REVISION-LABEL"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="STATE"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="COMPANY-REVISION-INFOS">
+		<!-- Automatically generated wrapper element type -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" type="COMPANY-REVISION-INFO" name="COMPANY-REVISION-INFO"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DOC-REVISIONS">
+		<!-- Automatically generated wrapper element type -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" type="DOC-REVISION" name="DOC-REVISION"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DOC-REVISION">
+		<!--Class: DOC-REVISION-->
+		<!-- Each DOC-REVISION object describes one revision of the object the ADMIN-DATA belongs to. -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" name="TEAM-MEMBER-REF" type="ODXLINK"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="REVISION-LABEL"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="STATE"/>
+			<xsd:element maxOccurs="1" minOccurs="1" type="xsd:dateTime" name="DATE"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="TOOL"/>
+			<xsd:element type="COMPANY-REVISION-INFOS" name="COMPANY-REVISION-INFOS" minOccurs="0" maxOccurs="1"/>
+			<xsd:element type="MODIFICATIONS" name="MODIFICATIONS" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MODIFICATION">
+		<!--Class: MODIFICATION-->
+		<!-- This class represents a modification comment of the editor of a ODX database. -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" type="xsd:string" name="CHANGE"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="REASON"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MODIFICATIONS">
+		<!-- Automatically generated wrapper element type -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" type="MODIFICATION" name="MODIFICATION"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+
+	<!-- ++++++++++ Definition of COMPANY-DATA: ++++++++++ -->
+	<xsd:complexType name="COMPANY-DATA">
+		<!--Class: COMPANY-DATA-->
+		<!-- This class wraps all data of a company that is involved as a process partner in the creation or modification of ODX objects. -->
+		<xsd:sequence>
+			<xsd:group ref="ELEMENT-ID"/>
+			<xsd:element type="ROLES" name="ROLES" minOccurs="0" maxOccurs="1"/>
+			<xsd:element type="TEAM-MEMBERS" name="TEAM-MEMBERS" minOccurs="0" maxOccurs="1"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="COMPANY-SPECIFIC-INFO" name="COMPANY-SPECIFIC-INFO"/>
+		</xsd:sequence>
+		<xsd:attribute use="required" type="xsd:ID" name="ID"/>
+		<xsd:attribute use="optional" type="xsd:string" name="OID"/>
+	</xsd:complexType>
+	<xsd:complexType name="COMPANY-SPECIFIC-INFO">
+		<!--Class: COMPANY-SPECIFIC-INFO-->
+		<!-- This class represents company spezific information.Information that is not associated with a single person may be stored also in the COMPANY-SPECIFIC-INFO object. -->
+		<xsd:sequence>
+			<xsd:element type="RELATED-DOCS" name="RELATED-DOCS" minOccurs="0" maxOccurs="1"/>
+			<xsd:element type="SDGS" name="SDGS" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RELATED-DOC">
+		<!--Class: RELATED-DOC-->
+		<!-- RELATED-DOC objects are used for cross referencing additional documents. -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" type="XDOC" name="XDOC"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="DESCRIPTION" name="DESC"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RELATED-DOCS">
+		<!-- Automatically generated wrapper element type -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" type="RELATED-DOC" name="RELATED-DOC"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ROLES">
+		<!-- Automatically generated wrapper element type -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" type="xsd:string" name="ROLE"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TEAM-MEMBERS">
+		<!-- Automatically generated wrapper element type -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" type="TEAM-MEMBER" name="TEAM-MEMBER"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TEAM-MEMBER">
+		<!--Class: TEAM-MEMBER-->
+		<!-- This class represents a team member of a company. -->
+		<xsd:sequence>
+			<xsd:group ref="ELEMENT-ID"/>
+			<xsd:element type="ROLES" name="ROLES" minOccurs="0" maxOccurs="1"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="DEPARTMENT"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="ADDRESS"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="ZIP"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="CITY"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="PHONE"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="FAX"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="EMAIL"/>
+		</xsd:sequence>
+		<xsd:attribute use="required" type="xsd:ID" name="ID"/>
+		<xsd:attribute use="optional" type="xsd:string" name="OID"/>
+	</xsd:complexType>
+	<xsd:complexType name="XDOC">
+		<!--Class: XDOC-->
+		<!-- XDOC specifies the reference do the additional document. -->
+		<xsd:sequence>
+			<xsd:group ref="ELEMENT-ID"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="NUMBER"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="STATE"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:dateTime" name="DATE"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="PUBLISHER"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="URL"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="xsd:string" name="POSITION"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<!-- ++++++++++ Definition of SDGS: ++++++++++ -->
+	<xsd:complexType name="SD">
+		<!--Class: SD-->
+		<!-- The SD class contains a special data. -->
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute use="optional" type="xsd:string" name="SI"/>
+				<xsd:attribute use="optional" type="xsd:string" name="TI"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SDG">
+		<!--Class: SDG-->
+		<!-- Special data groups (SDGS) are used to store OEM-specific data not covered by the ODX data model in a structured form. -->
+		<xsd:complexContent>
+			<xsd:extension base="SPECIAL-DATA">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" type="SDG-CAPTION" name="SDG-CAPTION"/>
+					<xsd:choice maxOccurs="unbounded" minOccurs="0">
+						<xsd:element maxOccurs="1" minOccurs="1" type="SDG" name="SDG"/>
+						<xsd:element maxOccurs="1" minOccurs="1" type="SD" name="SD"/>
+					</xsd:choice>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SDG-CAPTION">
+		<!--Class: SDG-CAPTION-->
+		<!-- An SDG contains an optional CAPTION to describe the SDG's content, and a list of SDGs and SD objects that contain the special data. -->
+		<xsd:sequence>
+			<xsd:group ref="ELEMENT-ID"/>
+		</xsd:sequence>
+		<xsd:attribute use="required" type="xsd:ID" name="ID"/>
+		<xsd:attribute use="optional" type="xsd:string" name="OID"/>
+	</xsd:complexType>
+	<xsd:complexType name="SDGS">
+		<!-- Automatically generated wrapper element type -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" type="SDG" name="SDG"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SPECIAL-DATA">
+		<!--Class: SPECIAL-DATA-->
+		<!-- Wrapper class of the SDG and SD. -->
+	</xsd:complexType>
+
+
+	<!-- ++++++++++ Definition of common elements and attributes: ++++++++++ -->
+	<xsd:complexType name="DESCRIPTION">
+		<!--Class: DESCRIPTION-->
+		<!-- This class gives the possibility to describe the object. -->
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" type="p" name="p"/>
+		</xsd:sequence>
+		<xsd:attribute use="optional" type="xsd:string" name="TI"/>
+	</xsd:complexType>
+	<xsd:simpleType name="DOCTYPE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="FLASH"/>
+			<xsd:enumeration value="CONTAINER"/>
+			<xsd:enumeration value="LAYER"/>
+			<xsd:enumeration value="MULTIPLE-ECU-JOB-SPEC"/>
+			<xsd:enumeration value="COMPARAM-SPEC"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:group name="ELEMENT-ID">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" type="xsd:string" name="SHORT-NAME"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="TEXT" name="LONG-NAME"/>
+			<xsd:element maxOccurs="1" minOccurs="0" type="DESCRIPTION" name="DESC"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="TEXT">
+		<!--Class: TEXT-->
+		<!-- This class gives the user the possibility to describe a text . -->
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute use="optional" type="xsd:string" name="TI"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ODXLINK">
+		<xsd:attributeGroup ref="ODXLINK-ATTR"/>
+	</xsd:complexType>
+	<xsd:attributeGroup name="ODXLINK-ATTR">
+		<xsd:attribute use="required" type="xsd:string" name="ID-REF"/>
+		<xsd:attribute use="optional" type="xsd:string" name="DOCREF"/>
+		<xsd:attribute use="optional" type="DOCTYPE" name="DOCTYPE"/>
+		<xsd:attribute use="optional" type="xsd:string" name="REVISION"/>
+	</xsd:attributeGroup>
+
+	<!-- ++++++++++ Definition of the root element: ++++++++++ -->
+	<xsd:element name="CATALOG" type="CATALOG"/>
+</xsd:schema>

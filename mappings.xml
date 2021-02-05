@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<ArrayOfModelMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ModelMapping>
+    <Brand>Challenger</Brand>
+    <Model ID="0631a418-9594-4f03-874b-0e00950ee5fe" />
+    <Version>1.16</Version>
+    <Category>cc50b133-c4cf-4dca-ad75-16b140aa3bdb</Category>
+    <Region RegionCode="1">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Challenger UHD Baler field with tractor.jpg</Text>
+          <guid>f6d83e16-291a-436b-bdd9-8a62f22fac57</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="4">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Challenger UHD Baler field with tractor.jpg</Text>
+          <guid>f6d83e16-291a-436b-bdd9-8a62f22fac57</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="8">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Challenger UHD Baler field with tractor.jpg</Text>
+          <guid>f6d83e16-291a-436b-bdd9-8a62f22fac57</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="64">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Challenger UHD Baler field with tractor.jpg</Text>
+          <guid>f6d83e16-291a-436b-bdd9-8a62f22fac57</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+  </ModelMapping>
+  <ModelMapping>
+    <Brand>Fendt</Brand>
+    <Model ID="e777da9a-13f5-4222-af59-8e36203c40ac" />
+    <Version>1.16</Version>
+    <Category>cc50b133-c4cf-4dca-ad75-16b140aa3bdb</Category>
+    <Region RegionCode="1">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Fendt UHD Baler.jpg</Text>
+          <guid>8b67ccf0-9e46-4cf5-b0cb-bfa25f13dc22</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="4">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Fendt UHD Baler.jpg</Text>
+          <guid>8b67ccf0-9e46-4cf5-b0cb-bfa25f13dc22</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="8">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Fendt UHD Baler.jpg</Text>
+          <guid>8b67ccf0-9e46-4cf5-b0cb-bfa25f13dc22</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="64">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Fendt UHD Baler.jpg</Text>
+          <guid>8b67ccf0-9e46-4cf5-b0cb-bfa25f13dc22</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+  </ModelMapping>
+  <ModelMapping>
+    <Brand>Massey Ferguson</Brand>
+    <Model ID="0631a418-9594-4f03-874b-0e00950ee5fe" />
+    <Version>1.16</Version>
+    <Category>cc50b133-c4cf-4dca-ad75-16b140aa3bdb</Category>
+    <Region RegionCode="1">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Massey Ferguson UHD Baler.jpg</Text>
+          <guid>165473f6-cdf2-4da5-a4b2-dabea0743ede</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="4">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Massey Ferguson UHD Baler.jpg</Text>
+          <guid>165473f6-cdf2-4da5-a4b2-dabea0743ede</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="8">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Massey Ferguson UHD Baler.jpg</Text>
+          <guid>165473f6-cdf2-4da5-a4b2-dabea0743ede</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+    <Region RegionCode="64">
+      <ModelYear Year="2017">
+        <Lookup />
+        <Description ID="00000000-0000-0000-0000-000000000000" />
+        <Image Ver="1.0">
+          <Text>Massey Ferguson UHD Baler.jpg</Text>
+          <guid>165473f6-cdf2-4da5-a4b2-dabea0743ede</guid>
+        </Image>
+      </ModelYear>
+    </Region>
+  </ModelMapping>
+</ArrayOfModelMapping>

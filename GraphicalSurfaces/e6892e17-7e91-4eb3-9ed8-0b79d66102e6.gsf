@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<GraphicalSurface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BackColor>
+    <IsEmpty>true</IsEmpty>
+    <KnownColor>0</KnownColor>
+    <ARGB>0</ARGB>
+  </BackColor>
+  <BackgroundImageLayout>Tile</BackgroundImageLayout>
+  <Script>
+    <VersionAsString>1.0.0.0</VersionAsString>
+    <GlobalVariablesObject ID="5978dead-c345-4b18-b5af-7242d03549bc" GroupID="00000000-0000-0000-0000-000000000000" Created="true" />
+    <EndGlobalVariablesObject ID="1e3be634-f08f-4500-8dd7-758f509b9ca5" GroupID="00000000-0000-0000-0000-000000000000" Created="true" />
+    <EventObject ID="680f9d30-82cf-462a-8c33-58da3b0309d8" GroupID="680f9d30-82cf-462a-8c33-58da3b0309d8" Created="true">
+      <EventID>
+        <ObjectID>00000000-0000-0000-0000-000000000000</ObjectID>
+        <ObjectName />
+        <Name>Surface Open</Name>
+      </EventID>
+      <EndEventID>580da6bc-38cb-43ad-8f45-8ef5a20ae169</EndEventID>
+    </EventObject>
+    <EndEventObject ID="580da6bc-38cb-43ad-8f45-8ef5a20ae169" GroupID="680f9d30-82cf-462a-8c33-58da3b0309d8" Created="true" />
+    <EventObject ID="4c738426-87cd-4fcc-8604-d4a9312ffc6c" GroupID="4c738426-87cd-4fcc-8604-d4a9312ffc6c" Created="true">
+      <EventID>
+        <ObjectID>00000000-0000-0000-0000-000000000000</ObjectID>
+        <ObjectName />
+        <Name>Surface Close</Name>
+      </EventID>
+      <EndEventID>f0c0c44c-d495-420e-bebc-339f80f35ee8</EndEventID>
+    </EventObject>
+    <EndEventObject ID="f0c0c44c-d495-420e-bebc-339f80f35ee8" GroupID="4c738426-87cd-4fcc-8604-d4a9312ffc6c" Created="true" />
+  </Script>
+  <InputParams />
+  <ReturnParams />
+</GraphicalSurface>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<PluginReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MergeWithConnection>f094c1f7-ce8d-4bd1-b349-7088de800cee</MergeWithConnection>
+  <ID>652e0c4c-a37e-4947-8dab-13ca89de0538</ID>
+  <NameID ID="95602f67-d883-4d9c-85af-88af775828d7" />
+  <MajorVersion>5</MajorVersion>
+  <MinorVersion>9</MinorVersion>
+  <VersionDate>2019-08-28T08:24:14.7389362-05:00</VersionDate>
+  <SaveDate>2019-08-28T08:24:14.7770252-05:00</SaveDate>
+  <FolderName>C1000</FolderName>
+  <Enabled>true</Enabled>
+  <Visible>Formula: True</Visible>
+  <Parameters>
+    <InputParams>
+      <ScriptInputParameter>
+        <Name>Tractor_Bus</Name>
+        <Type>Channel(Enum)</Type>
+        <IsFormula xsi:nil="true" />
+        <Value>Formula: Diagnostic::cSensor_bus</Value>
+      </ScriptInputParameter>
+      <ScriptInputParameter>
+        <Name>ISO_Bus</Name>
+        <Type>Channel(Enum)</Type>
+        <IsFormula xsi:nil="true" />
+        <Value>Formula: Diagnostic::cISO_Bus</Value>
+      </ScriptInputParameter>
+      <ScriptInputParameter>
+        <Name>C1000_SW_Versions</Name>
+        <Type>Enum: C1000_Individual C1000_3_3_1 C1000_3_4_1 C1000_3_4_2 C1000_3_4_3 C1000_3_4_4</Type>
+        <IsFormula xsi:nil="true" />
+        <Value>Object: (Enum: C1000_Individual C1000_3_3_1 C1000_3_4_1 C1000_3_4_2 C1000_3_4_3 C1000_3_4_4)C1000_3_4_4</Value>
+      </ScriptInputParameter>
+      <ScriptInputParameter>
+        <Name>C1000Optional</Name>
+        <Type>Boolean</Type>
+        <IsFormula xsi:nil="true" />
+        <Value>Formula: True</Value>
+      </ScriptInputParameter>
+      <ScriptInputParameter>
+        <Name>Configuration</Name>
+        <Type>Enum: ConnectedOnlyToISO_Bus ConnectedOnlyToTracor_Bus ConnectedToISOandTractorBus</Type>
+        <IsFormula xsi:nil="true" />
+        <Value>Object: (Enum: ConnectedOnlyToISO_Bus ConnectedOnlyToTracor_Bus ConnectedToISOandTractorBus)ConnectedOnlyToISO_Bus</Value>
+      </ScriptInputParameter>
+      <ScriptInputParameter>
+        <Name>CCD_Version</Name>
+        <Type>String</Type>
+        <IsFormula xsi:nil="true" />
+        <Value>Formula: ""</Value>
+      </ScriptInputParameter>
+      <ScriptInputParameter>
+        <Name>rsIndividualC1000File</Name>
+        <Type>RecordSet: File(File) VerMore3_1(Boolean)</Type>
+        <IsFormula xsi:nil="true" />
+        <Value>Object: (RecordSet: File(File) VerMore3_1(Boolean))</Value>
+      </ScriptInputParameter>
+    </InputParams>
+  </Parameters>
+  <Channel1StringID ID="00000000-0000-0000-0000-000000000000" />
+  <Channel1Enabled>false</Channel1Enabled>
+  <Channel1BaudRate>250000</Channel1BaudRate>
+  <Channel2StringID ID="00000000-0000-0000-0000-000000000000" />
+  <Channel2Enabled>false</Channel2Enabled>
+  <Channel2BaudRate>250000</Channel2BaudRate>
+  <Channel3StringID ID="00000000-0000-0000-0000-000000000000" />
+  <Channel3Enabled>false</Channel3Enabled>
+  <Channel3BaudRate>250000</Channel3BaudRate>
+  <Channel4StringID ID="00000000-0000-0000-0000-000000000000" />
+  <Channel4Enabled>false</Channel4Enabled>
+  <Channel4BaudRate>250000</Channel4BaudRate>
+  <BaseLineSettings />
+  <ReferenceLabel>C1000</ReferenceLabel>
+</PluginReference>
